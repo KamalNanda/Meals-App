@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/widgets/meal.dart';
 import '../data/meals.dart';
 
 class Meals extends StatelessWidget {
@@ -20,7 +21,15 @@ class Meals extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {
-          return Text(filteredMeals[index].title);
+          // return Text(filteredMeals[index].title);
+          return Meal(
+            title: filteredMeals[index].title,
+            imgUrl: filteredMeals[index].imageUrl,
+            duration: filteredMeals[index].duration,
+            complexity: filteredMeals[index].complexity,
+            affordability: filteredMeals[index].affordability,
+            id: filteredMeals[index].id,
+          );
         },
         itemCount: filteredMeals.length,
       ),

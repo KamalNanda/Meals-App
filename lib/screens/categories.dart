@@ -7,26 +7,19 @@ class Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "FOOD APP",
-            // style: TextStyle(fontFamily: 'Raleway'),
-          ),
+    return Container(
+      padding: EdgeInsets.all(15),
+      child: GridView(
+        children: DUMMY_CATEGORIES
+            .map((data) => Category(data.title, data.color, data.id))
+            .toList(),
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
         ),
-        body: Container(
-          padding: EdgeInsets.all(15),
-          child: GridView(
-            children: DUMMY_CATEGORIES
-                .map((data) => Category(data.title, data.color, data.id))
-                .toList(),
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200,
-              childAspectRatio: 3 / 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-            ),
-          ),
-        ));
+      ),
+    );
   }
 }

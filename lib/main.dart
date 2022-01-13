@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/screens/favourites.dart';
 import 'package:food_app/screens/meals.dart';
-import './screens/categories.dart';
+import 'package:food_app/screens/receipe.dart';
+// import './screens/categories.dart';
+import './screens/home.dart';
+import './screens/filters.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,10 +29,13 @@ class MyApp extends StatelessWidget {
                     // fontFamily: 'RobotoCondensed',
                     fontWeight: FontWeight.bold),
               )),
-      home: const Categories(),
+      home: const Home(),
       routes: {
-        // '/': (context) => Categories(),
+        // '/': (context) => const Home(),
         '/meals': (context) => Meals(),
+        '/meal': (context) => Reciepe(),
+        '/filters': (context) => Filters(),
+        '/favourites': (context) => Favourites(),
       },
     );
   }
